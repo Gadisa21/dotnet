@@ -28,6 +28,22 @@ namespace CommunityForum.Services
             await _questions.InsertOneAsync(question);
             return question;
         }
+          public async Task<List<Question>> GetAllQuestionsAsync(int page, int pageSize)
+        {
+            return await _questions
+                .Find(q => true) // Retrieve all questions
+                .SortByDescending(q => q.CreatedAt) // Sort by newest first
+                .Skip((page - 1) * pageSize)
+                .Limit(pageSize)
+                .ToListAsync();
+        }
+
+        public async Task<Question?> GetQuestionByIdAsync(string questionId)
+        {
+            return await _questions.Find(q => q.Id == questionId).FirstOrDefaultAsync();
+        }
+    
+
 
       
     }

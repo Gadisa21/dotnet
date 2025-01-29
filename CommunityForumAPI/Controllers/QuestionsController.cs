@@ -43,6 +43,41 @@ namespace CommunityForum.Controllers
             }
         }
 
+        // GET api/questions (Get All Questions with Pagination)
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<List<Question>>> GetAllQuestions([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        {
+            // Validate pagination parameters
+            if (page <= 0)
+            {
+                return BadRequest(new { message = "Page number must be greater than 0." });
+            }
+
+            if (pageSize <= 0 || pageSize > 50)
+            {
+                return BadRequest(new { message = "Page size must be between 1 and 50." });
+            }
+            var questions = await _questionService.GetAllQuestionsAsync(page, pageSize);
+            return Ok(questions);
+        }
+
+        // GET api/questions/{id} (Get a specific question by ID)
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<ActionResult<Question>> GetQuestionById(string id)
+        {
+            var question = await _questionService.GetQuestionByIdAsync(id);
+            if (question == null)
+            {
+                return NotFound(new { message = "Question not found" });
+            }
+
+            return Ok(question);
+        }
+    
+
+
        
        
     }
