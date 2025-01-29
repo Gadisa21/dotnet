@@ -30,8 +30,8 @@ namespace CommunityForum.Controllers
             try
             {
                 // Register user and get the JWT token
-                var token = await _authService.RegisterAsync(user);
-                return Ok(new { Token = token }); // Return token on successful registration
+                var message = await _authService.RegisterAsync(user);
+                return Ok(new { Message = message }); // Return token on successful registration
             }
             catch (Exception ex)
             {
