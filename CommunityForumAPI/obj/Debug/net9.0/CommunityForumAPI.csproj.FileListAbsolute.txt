@@ -48,6 +48,7 @@ C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\obj\Debug\net9.0\refint
 C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\obj\Debug\net9.0\CommunityForumAPI.pdb
 C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\obj\Debug\net9.0\CommunityForumAPI.genruntimeconfig.cache
 C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\obj\Debug\net9.0\ref\CommunityForumAPI.dll
+<<<<<<< HEAD
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\bin\Debug\net9.0\appsettings.json
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\bin\Debug\net9.0\CommunityForumAPI.staticwebassets.endpoints.json
@@ -98,3 +99,8 @@ C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\obj\Debug\net9.0\re
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\obj\Debug\net9.0\CommunityForumAPI.pdb
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\obj\Debug\net9.0\CommunityForumAPI.genruntimeconfig.cache
 C:\Users\user\Desktop\All\C#Project\dotnet\CommunityForumAPI\obj\Debug\net9.0\ref\CommunityForumAPI.dll
+=======
+C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC\Desktop\finalDotnet\dotnet\CommunityForumAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+>>>>>>> d0dd331 (updated authetication)
