@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "nm8vGRn701Ify+dcmtXcDd8A3dq/S65vY9QfF99ZxwI=",
+  "Source": "CommunityForumAPI",
+  "BasePath": "_content/CommunityForumAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
