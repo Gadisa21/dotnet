@@ -36,8 +36,12 @@ namespace CommunityForum.Services
             await _users.InsertOneAsync(user);
 
             // Generate JWT token
-            return GenerateJwtToken(user);
-        }
+            
+            return "User successfully registered";
+                  
+
+              
+            }
 
         public async Task<string?> LoginAsync(string email, string password)
         {
