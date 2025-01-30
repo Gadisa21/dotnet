@@ -8,6 +8,7 @@ namespace CommunityForum.Services
         Task<Question> CreateQuestionAsync(string userId, CreateQuestionDto questionDto);
          Task<List<Question>> GetAllQuestionsAsync(int page, int pageSize);
         Task<Question?> GetQuestionByIdAsync(string questionId);
+        Task<List<Question>> SearchQuestionsAsync(string keyword); 
         
     }
 }

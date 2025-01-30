@@ -75,6 +75,19 @@ namespace CommunityForum.Controllers
 
             return Ok(question);
         }
+        // GET api/questions/search
+        [HttpGet("search")]
+        [Authorize]
+        public async Task<ActionResult<List<Question>>> SearchQuestions([FromQuery] string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return BadRequest(new { message = "Keyword is required." });
+            }
+
+            var questions = await _questionService.SearchQuestionsAsync(keyword);
+            return Ok(questions);
+        }
     
 
 

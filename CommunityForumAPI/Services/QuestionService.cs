@@ -1,6 +1,8 @@
 using CommunityForum.DTOs;
 using CommunityForum.Models;
 using MongoDB.Driver;
+using MongoDB.Bson;
+
 
 namespace CommunityForum.Services
 {
@@ -42,6 +44,18 @@ namespace CommunityForum.Services
         {
             return await _questions.Find(q => q.Id == questionId).FirstOrDefaultAsync();
         }
+
+        public async Task<List<Question>> SearchQuestionsAsync(string keyword)
+{
+    // Case-insensitive search using MongoDB regex
+    var filter = Builders<Question>.Filter.Or(
+        Builders<Question>.Filter.Regex(q => q.Title, new BsonRegularExpression(keyword, "i")),
+        Builders<Question>.Filter.Regex(q => q.Body, new BsonRegularExpression(keyword, "i"))
+    );
+
+    return await _questions.Find(filter).ToListAsync();  
+}
+
     
 
 
