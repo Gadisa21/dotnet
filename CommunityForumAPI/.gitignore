@@ -13,3 +13,4 @@ obj/
 
 # Ignore NuGet packages
 *.nupkg
+obj/
