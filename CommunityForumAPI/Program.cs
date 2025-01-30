@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 // Register services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
+builder.Services.AddScoped<IAnswerService, AnswerService>();
 
 
 //  Add Authentication
@@ -39,7 +40,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 Console.WriteLine($" Authentication failed: {context.Exception.Message}");
                 return Task.CompletedTask;
             },
-            
+        };  
          
     });
 
