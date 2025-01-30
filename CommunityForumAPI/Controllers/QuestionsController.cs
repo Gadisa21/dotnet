@@ -35,7 +35,7 @@ namespace CommunityForum.Controllers
             try
             {
                 var createdQuestion = await _questionService.CreateQuestionAsync(userId, questionDto);
-                return CreatedAtAction(nameof(GetQuestionById), new { id = createdQuestion.Id }, createdQuestion);
+                return Created($"/api/questions/{createdQuestion.Id}", createdQuestion);
             }
             catch (Exception ex)
             {

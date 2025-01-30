@@ -36,5 +36,22 @@ namespace CommunityForum.Services
         {
             return await _answers.Find(a => a.QuestionId == questionId).ToListAsync();
         }
+       public async Task<bool> UpdateAnswerAsync(string answerId, string userId, string updatedBody)
+    {
+        var filter = Builders<Answer>.Filter.Eq(a => a.Id, answerId) &
+                     Builders<Answer>.Filter.Eq(a => a.UserId, userId);
+        var update = Builders<Answer>.Update.Set(a => a.Body, updatedBody);
+
+        var result = await _answers.UpdateOneAsync(filter, update);
+        return result.ModifiedCount > 0;
+    }
+        public async Task<bool> DeleteAnswerAsync(string answerId, string userId)
+    {
+        var filter = Builders<Answer>.Filter.Eq(a => a.Id, answerId) &
+                     Builders<Answer>.Filter.Eq(a => a.UserId, userId);
+
+        var result = await _answers.DeleteOneAsync(filter);
+        return result.DeletedCount > 0;
+    }
     }
 }
